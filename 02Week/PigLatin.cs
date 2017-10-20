@@ -6,7 +6,8 @@ public class Program
     {
         Console.WriteLine("What's the word?");
         string word = Console.ReadLine();
-        Console.WriteLine(translateWord(word));
+        // string word = wordUp ToLower();
+        Console.WriteLine(translateWord(word.ToLower()));
         Console.ReadLine();
     }
     
@@ -24,7 +25,7 @@ public class Program
         return "Your word in Pig Latin is: " + restOfWord + firstLetter + "ay";
         */
 
-        //SPEC 2 & 3
+        //SPEC 2, 3 & 4
 
         //Find Index of First Vowel
         int indexOfFirstVowel = -1;
