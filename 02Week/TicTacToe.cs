@@ -13,8 +13,22 @@ public class Program
     public static void Main()
     {
         // Your code here
-        DrawBoard();
-        GetInput();
+        // while (!CheckForWin)
+        //  {
+        do
+        {
+            DrawBoard();
+            GetInput();
+        } while (!CheckForWin() || !CheckForTie()); // true -- loop will keep going
+                    // false -- loop is going to end  
+
+        // Won -- Check for win() true when there is a winner, false when not
+        // Tie -- new method CheckForTie() true when there is a tie, false when not
+
+
+
+      //  }
+        Console.ReadLine();
 
     }
 
@@ -29,7 +43,8 @@ public class Program
 
         PlaceMark(row, column);
 
-        playerTurn = playerTurn == "X" ? "O" : "X";
+        
+    
         // Your code here
         return;
     }
@@ -50,8 +65,26 @@ public class Program
         {
             Console.WriteLine("Player " + playerTurn + " Won!");
         }
+        else
+        {
+            playerTurn = playerTurn == "X" ? "O" : "X";
+        }
 
         return hasPlayerWon;
+    }
+
+    public static bool CheckForTie()
+    {
+        bool havePlayersTied = false;
+
+        if (board[0][0] != " " && board[0][1] != " " && board[0][2] != " " && board[1][0] != " "
+             && board[1][1] != " " && board[1][2] != " " && board[2][0] != " " && board[2][1] != " "
+              && board[2][2] != " ")
+        {
+            havePlayersTied = true;
+        }
+
+        return !havePlayersTied;
     }
 
     public static bool HorizontalWin()
