@@ -23,11 +23,15 @@ public class Program
     
     public static void Main()
     {
-        CreateBoard();
-        DrawBoard();
-        char[] guess = new char[4];
-        Console.WriteLine("Enter Guess:");
-        guess = Console.ReadLine().ToCharArray();
+        do
+        {
+            CreateBoard();
+            DrawBoard();
+            char[] guess = new char[4];
+            Console.WriteLine("Enter Guess:");
+            guess = Console.ReadLine().ToCharArray();
+            Console.WriteLine(GenerateHint());
+        } while (CheckSolution() == false);
         return;
     }
     
@@ -88,8 +92,13 @@ public class Program
             //found in the solution (clone)
             char character = guess[b];
             string solutionString = String.Join("", cloneSolution);
-
             int index = solutionString.IndexOf(character);
+            if (index > -1)
+            {
+                correctLetters++;
+                cloneSolution[b] = ' ';
+            }
+
             //going forward, determine what to do when there is
             // and is not a match.
 
@@ -101,9 +110,12 @@ public class Program
         //writeline with correctletterlocation and correct letter
         //differentiating between the two
 
+        } if (correctLetterLocations == codeSize)
+        {
+            return "You cracked the code!!";
         }
 
-        return " ";
+        return correctLetterLocations + " correct letters in the right place and " + correctLetters + " correct, but in the wrong place!"; 
     }
     
     public static void InsertCode(char[] guess)
