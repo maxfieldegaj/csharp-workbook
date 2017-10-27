@@ -33,13 +33,76 @@ public class Program
     
     public static bool CheckSolution(char[] guess)
     {
+        //Bring together into a single string
+
+        //guess
+        string guessString = String.Join("", guess);
+
+        //and solution
+        string solutionString = String.Join(string.Empty, solution);
+
+
+        if (guessString == solutionString)
+        {
+            return true;
+        }
         // Your code here
         return false;
     }
     
     public static string GenerateHint(char[] guess)
     {
-        // Your code here
+        //clone solution
+        char[] cloneSolution = (char[])solution.Clone();
+
+        //letter location int
+        int correctLetterLocations = 0;
+
+        //correct letter int
+        int correctLetters = 0;
+
+        //iterate over cloneSolution
+        for (int i = 0; i < cloneSolution.Length; i++)
+        {
+            //compare cloneSolution against guess
+            //for each index
+            if (cloneSolution[i] == guess[i])
+            {
+                correctLetterLocations++;
+                cloneSolution[i] = ' ';
+            }
+            /*else
+            {
+                for (int b = 0; b < cloneSolution.Length; b++)
+                {
+                    if (cloneSolution[i] == guess[b])
+                        correctLetters++;
+                }
+            } */
+            //*****Wouldn't this solve duplicate letter issue caused by indexof?
+        }
+
+        for (int b = 0; b < cloneSolution.Length; b++)
+        {
+            //check if any letter inside the guess is
+            //found in the solution (clone)
+            char character = guess[b];
+            string solutionString = String.Join("", cloneSolution);
+
+            int index = solutionString.IndexOf(character);
+            //going forward, determine what to do when there is
+            // and is not a match.
+
+            //if you find the character
+                //increase correctletter
+                //replace character with empty space
+
+        //return the hint
+        //writeline with correctletterlocation and correct letter
+        //differentiating between the two
+
+        }
+
         return " ";
     }
     
