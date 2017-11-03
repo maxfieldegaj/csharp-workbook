@@ -31,7 +31,7 @@ public class Program
             Console.WriteLine("Enter Guess:");
             guess = Console.ReadLine().ToCharArray();
             Console.WriteLine(GenerateHint());
-        } while (CheckSolution() == false);
+        } while !CheckSolution();
         return;
     }
     
