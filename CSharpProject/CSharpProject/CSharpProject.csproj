@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\04Week\Timer.cs">
-      <Link>Timer.cs</Link>
+    <Compile Include="..\..\04Week\Checkpoint1.cs">
+      <Link>Checkpoint1.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
