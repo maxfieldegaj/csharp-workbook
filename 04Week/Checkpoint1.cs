@@ -117,29 +117,24 @@ public class Program
         //For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
         Console.WriteLine("Pt. 5: Please enter a series of numbers seperated by commas.");
         string input = Console.ReadLine();
-        //make list of all input substrings
-        List<string> substringList = new List<string>();
-        for (int i = 0; i < input.Length; i++)
+
+        int maxNumber = 0;
+
+        string[] inputSplit = input.Split(',');
+
+        foreach (var s in inputSplit)
         {
-           substringList.Add(input.Substring(i));
-        }
-        //make a new list that is void of "," and " " 
-        List<string> numberList = new List<string>();
-        for (int j = 0; j < substringList.Count; j++)
-        {
-           if (substringList.IndexOf(j) != "," || " ")
+            int valueFromArray = int.Parse(s.Trim());
+
+            if (valueFromArray > maxNumber)
             {
-                numberList.Add(substringList.IndexOf(j));
+                maxNumber = valueFromArray;
             }
         }
-        //convert the list items to int's
-        List<int> parseList = new List<int>();
-        foreach (string in numberList)
-        {
-            parseList.Add(int.Parse(string in numberList))
-        }
 
-        //find which is greatest and display it
+        Console.WriteLine($"The max number is {maxNumber}");
+        Console.ReadLine();
+
 
 
 

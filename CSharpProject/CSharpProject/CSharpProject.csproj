@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\05Week\BlogPost.cs">
-      <Link>BlogPost.cs</Link>
+    <Compile Include="..\..\04Week\Checkpoint1.cs">
+      <Link>Checkpoint1.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
