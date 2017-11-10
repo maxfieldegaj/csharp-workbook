@@ -130,18 +130,18 @@ public class Board
     
     public void DrawBoard()
     {
-        Console.WriteLine("0  1  2  3  4  5  6  7");
-        for(int i = 0; i < Grid.GetLength(1); i++) // row
+        Console.WriteLine("   0  1  2  3  4  5  6  7");
+        for(int i = 0; i < Grid.Length; i++) // row
         {
-            string column = $"{i} ";
+            string row = $"{i} ";
 
-            for(int e = 0; e < Grid.GetLength(2); e++) // column
+            for(int e = 0; e < Grid[i].Length; e++) // column
             {
-                column += Grid[i][e];
+                row += $" {Grid[i][e]} ";
             }
+            Console.WriteLine(row);
         }
-        // Your code here
-        return;
+
     }
     
     public Checker SelectChecker(int row, int column)
@@ -169,16 +169,16 @@ class Game
         board.GenerateCheckers();
         board.CreateBoard();
         board.PlaceCheckers();
+        board.DrawBoard();
 
-        do
-        {
-            board.DrawBoard();
-            //make moves
-            //remove checker
+        /* do
+         {
+             //make moves
+             //remove checker
 
-        } while ();
+         } while ();
+         */
 
 
-        
     }
 }
