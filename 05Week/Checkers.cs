@@ -170,15 +170,54 @@ class Game
         board.GenerateCheckers();
         board.CreateBoard();
         board.PlaceCheckers();
-        board.DrawBoard();
+       // board.DrawBoard();
 
-        /* do
-         {
-             //make moves
-             //remove checker
+        do
+        {
+            board.DrawBoard();
 
-         } while ();
-         */
+            Console.WriteLine("'move' or 'remove' checker?");
+            string input = Console.ReadLine();
+
+            Console.WriteLine("Enter pickup row:");
+            int row = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter pickup column:");
+            int column = int.Parse(Console.ReadLine());
+
+            Checker selectedChecker = board.SelectChecker(row, column);
+
+            if (input == "remove")
+            {
+                board.Checkers.Remove(selectedChecker);
+            }
+            else
+            {
+                Console.WriteLine("Enter placement row:");
+                row = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter placement column:");
+                column = int.Parse(Console.ReadLine());
+
+                selectedChecker.Position = new int[] { row, column };
+            }
+
+            board.CreateBoard();
+            board.PlaceCheckers();
+
+        } while (!board.CheckForWin());
+
+        if (board.CheckForWin())
+        {
+            if (board.Checkers.All(x => x.Color == "white"))
+            {
+                Console.WriteLine("White has won!");
+            }
+            else
+            {
+                Console.WriteLine("Black has won!");
+            }
+        } 
 
 
     }
