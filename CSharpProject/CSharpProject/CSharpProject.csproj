@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\06Week\Polymorphism.cs">
-      <Link>Polymorphism.cs</Link>
+    <Compile Include="..\..\07Week\Interface.cs">
+      <Link>Interface.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
