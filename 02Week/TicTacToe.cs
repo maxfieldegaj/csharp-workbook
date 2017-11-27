@@ -43,22 +43,17 @@ public class Program
 
         PlaceMark(row, column);
 
-        
-    
-        // Your code here
-        return;
+           return;
     }
 
     public static void PlaceMark(int row, int column)
     {
-        // Your code here
         board[row][column] = playerTurn;
         return;
     }
 
     public static bool CheckForWin()
     {
-        // Your code here
         bool hasPlayerWon = HorizontalWin() || VerticalWin() || DiagonalWin();
         
         if (hasPlayerWon)
