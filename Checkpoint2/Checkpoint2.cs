@@ -15,11 +15,6 @@ public class Class1
 
 public class Grid
 {
-    public Grid()
-    {
-
-    }
-
     public static string playerTurn = "X";
 
     public static string[][] board = new string[][]
@@ -144,11 +139,6 @@ public class Grid
 
         return diagonalWin;
     }
-}
-
-public class CheckForWin
-{
-
 }
 
 public class Game

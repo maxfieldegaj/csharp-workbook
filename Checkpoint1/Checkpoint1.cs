@@ -16,10 +16,6 @@ public class Program
 
 public class Parts
 {
-    public Parts()
-    {
-
-    }
     public void PartOne()
     {
         int b = 0;
